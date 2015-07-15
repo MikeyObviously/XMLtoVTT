@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>XML to VTT Converter</title>	
+	
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div id="header">
+	<h2>ADB.XML -> VTT Captioning Converter</h2>
+</div>
+ 
+<div id="content">
+<p>Choose XML files from your computer to convert. Maximum is 20.</p>
+<p>After processing, a ZIP file will be downloaded.</p>
+	<form action="process.php" method="post" enctype="multipart/form-data">
+		<input type="file" name="file[]" id="file" multiple="multiple">
+		<input type="submit" name="submit" value="Process" id="submit" disabled='true'>
+	</form>	
+</div>
+<script>
+document.getElementById("file").onchange = function() {
+    if(this.value) {
+        document.getElementById("submit").disabled = false; 
+    }  
+}
+</script>
+</body>
+</html>
